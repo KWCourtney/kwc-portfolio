@@ -1,0 +1,136 @@
+  // Navigation Animation
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      left: 20%;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+    }
+  }
+
+  .overlay {
+    @include gradient(to right, $kwc-blue-background);
+    top: 0;
+    left: 0;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+
+    @extend .w-100, .position-fixed;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      height: 100%;
+
+      @extend .h-100;
+
+      li {
+        animation: fadeInRight .5s ease forwards;
+        animation-delay: .35s;
+
+        &:nth-of-type(2) {
+          animation-delay: .4s;
+        }
+        &:nth-of-type(3) {
+          animation-delay: .5s;
+        }
+        &:nth-of-type(4) {
+          animation-delay: .6s;
+        }
+        &:nth-of-type(5) {
+          animation-delay: .7s;
+        }
+        &:nth-of-type(6) {
+          animation-delay: .8s;
+        }
+      }
+    }
+
+    nav {
+      font-weight: 700;
+      color: $kwc-off-white-01-color;
+      font-family: $kwc-gt-flexa-ext;
+      line-height: inherit;
+      letter-spacing: -.0108em;
+      font-size: 2.3em;
+      line-height: 1.25;
+
+      @extend .d-flex, .flex-column, .align-items-center, .h-100, .position-relative, .justify-content-center;
+
+      ul {
+        list-style: none;
+
+        @extend .position-relative, .h-auto, .p-0, .my-0, .mx-auto;
+
+        li {
+          opacity: 0;
+
+          @extend .d-flex, .flex-row, .align-items-center, .justify-content-center, .position-relative;
+
+          a {
+            display: block;
+            position: relative;
+            color: $kwc-off-white-01-color;
+            text-decoration: none;
+            overflow: hidden;
+
+            @extend .text-uppercase;
+
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              width: 0%;
+              transform: translateX(-50%);
+              height: 3px;
+              background: $kwc-off-white-01-color;
+              transition: .35s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .overlay {
+    nav {
+      font-size: 2.7em;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .overlay {
+    nav {
+      font-size: 3.5em;
+    }
+  }
+ }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .overlay {
+    nav {
+      font-size: 4em;
+      line-height: 1.15;
+    }
+  }
+ }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { }
+
+// XX-Large devices (larger desktops, 1660px and up)
+@media (min-width: 1660px) { }
+
+// XX-Large devices (larger desktops, 1920px and up)
+ @media (min-width: 1920px) { }

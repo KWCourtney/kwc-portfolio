@@ -1,0 +1,16 @@
+@import "styles";
+
+.kwc-navigation-svg {
+    circle {
+      stroke-width: 2px;
+      stroke:$kwc-off-white-01-color;
+      opacity: 1 !important;
+    }
+
+    polygon {
+      fill:$kwc-off-white-01-color;
+      stroke:$kwc-off-white-01-color;
+      stroke-width:2px;
+      opacity: 1 !important;
+    }
+  }

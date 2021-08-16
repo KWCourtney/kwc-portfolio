@@ -1,0 +1,47 @@
+<!-- Skills Content -->
+<div class="kwc-skills-wrapper">
+    <div class="kwc-skills-content">
+      <section class="kwc-skills-top">
+        <!-- Title, Icon, Divider, and Text -->
+        <div class="kwc-skills-item left">
+          <section class="d-flex flex-row flex-nowrap">
+            <div class="kwc-skills-title-01">
+              skills
+            </div>
+            <div class="kwc-skills-icon">
+              <app-tagline-svg></app-tagline-svg>
+            </div>
+          </section>
+
+          <div class="kwc-skills-divider">
+            <img src="assets/images/divider.svg" alt="Skills Page Divider">
+          </div>
+
+          <div class="kwc-skills-subtitle">
+            From planning, wireframing, prototyping, + designing the UI to building front-end templates, my work fuses innovative thinking with industry best practices. I'm flexible and open-minded in my approach to new projects and am always eager and willing to take on new roles and responsibilities.
+          </div>
+        </div>
+
+        <!-- Skills Chips -->
+        <div class="kwc-skills-item right">
+          <div class="kwc-skills-body">
+            <div class="kwc-skills-chips">
+              <div class="kwc-skills-chip" *ngFor="let skills of skills">
+                <div class="kwc-skills-chip-icon">
+                  <i class="{{skills.icon}}"></i>
+                </div>
+                {{skills.name}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nav Icon -->
+      <div class="kwc-skills-navigation">
+        <a data-stick-cursor="true" href="/career" title="Navigate to career page">
+          <app-nav-svg></app-nav-svg>
+        </a>
+      </div>
+    </div>
+  </div>

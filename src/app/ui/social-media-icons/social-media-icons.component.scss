@@ -1,0 +1,114 @@
+@import "styles";
+
+:host {
+  height: 35px;
+  @extend .d-flex, .flex-row, .justify-content-center, .align-items-center;
+
+  @media (min-width: 768px) {
+    flex: 0 0 140px;
+  }
+}
+
+.kwc-social-media-icons {
+  a {
+    color: $kwc-off-white-01-color;
+    transform: scale(1);
+    transition: all .2s ease-in-out !important;
+    display: inline-block;
+
+    .ng-fa-icon {
+      font-size: 1em;
+    }
+  }
+}
+
+// Galaxy S5
+@media (min-width: 360px) {
+  .kwc-social-media-icons {
+    a {
+      .ng-fa-icon {
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+// iPhone 6/7/8/x/11 pro
+@media (min-width: 375px) {
+  .kwc-social-media-icons {
+    a {
+      &.me-2 {
+        margin-right: .75rem !important;
+      }
+      .ng-fa-icon {
+        font-size: 1.25em;
+      }
+    }
+  }
+}
+
+// iPhone 11 Pro
+@media only screen
+  and (device-width: 375px)
+  and (device-height: 812px)
+  and (-webkit-device-pixel-ratio: 3) {}
+
+// Pixel 2
+@media (min-width: 411px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .kwc-social-media-icons {
+    a {
+      &.me-2 {
+        margin-right: 1rem !important;
+      }
+      .ng-fa-icon {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .kwc-social-media-icons {
+    a {
+      transform: scale(1);
+      transition: all .2s ease-in-out !important;
+      display: inline-block;
+
+      .ng-fa-icon {
+        font-size: 1.5em;
+      }
+    }
+
+    a:hover     {
+      transform: scale(1.1) !important;
+    }
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {}
+
+// XX-Large devices (larger desktops, 1660px and up)
+@media (min-width: 1660px) {
+  .kwc-social-media-icons {
+    a {
+      .ng-fa-icon {
+        font-size: 1.6em;
+      }
+    }
+
+    a:hover     {
+      transform: scale(1.1) !important;
+    }
+  }
+ }
+
+ // XX-Large devices (larger desktops, 1920px and up)
+ @media (min-width: 1920px) {}

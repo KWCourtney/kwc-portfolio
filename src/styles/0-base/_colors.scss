@@ -1,0 +1,72 @@
+// General Use Colors
+$kwc-bright-blue-01-color: #007bff;
+$kwc-white: #ffffff;
+$kwc-off-white-01-color:#FEFEED;
+$kwc-grey-01-color: #EEEEDF;
+$kwc-grey-02-color: #EEEEEE;
+$kwc-background-circle: rgba(0, 0, 0, 0.075);
+$kwc-background-circle-ipad: rgba(0, 0, 0, 0.15);
+$kwc-modal-button-background: rgba(0,0,0,.2);
+
+// Background Gradient Mixin
+@mixin gradient($direction, $list) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+}
+
+// Background Colors + Gradients
+$kwc-blue-1-background: #1c10e0;
+$kwc-blue-2-background: #2216e6;
+$kwc-blue-3-background: #271beb;
+$kwc-blue-4-background: #2c20f1;
+$kwc-blue-5-background: #3025f7;
+$kwc-blue-6-background: #2f28f9;
+$kwc-blue-7-background: #2f2cfb;
+$kwc-blue-8-background: #2e2ffd;
+$kwc-blue-9-background: #2732fc;
+$kwc-blue-10-background: #1f34fa;
+$kwc-blue-11-background: #1537f9;
+$kwc-blue-12-background: #0539f7;
+
+$kwc-blue-background: $kwc-blue-1-background, $kwc-blue-2-background, $kwc-blue-3-background, $kwc-blue-4-background, $kwc-blue-5-background, $kwc-blue-6-background, $kwc-blue-7-background, $kwc-blue-8-background, $kwc-blue-9-background, $kwc-blue-10-background, $kwc-blue-11-background, $kwc-blue-12-background;
+
+$kwc-blue-tabs-section-background: #E3E1FB;
+$kwc-blue-tab-text-color: #180EC4;
+
+$kwc-blue-13-background: #03259e;
+$kwc-blue-14-background: #0326a3;
+$kwc-blue-15-background: #0327a7;
+$kwc-blue-16-background: #0429ac;
+$kwc-blue-17-background: #042ab1;
+$kwc-blue-18-background: #042bb4;
+$kwc-blue-19-background: #042bb8;
+$kwc-blue-20-background: #042cbb;
+$kwc-blue-21-background: #042cbd;
+$kwc-blue-22-background: #042dbf;
+$kwc-blue-23-background: #042dc2;
+$kwc-blue-24-background: #042ec4;
+
+$kwc-medium-blue-background: $kwc-blue-13-background, $kwc-blue-14-background, $kwc-blue-15-background, $kwc-blue-16-background, $kwc-blue-17-background, $kwc-blue-18-background, $kwc-blue-19-background, $kwc-blue-20-background, $kwc-blue-21-background, $kwc-blue-22-background, $kwc-blue-23-background, $kwc-blue-24-background;
+
+$kwc-medium-blue-tabs-section-background: #E0E4F3;
+$kwc-medium-blue-tab-text-color: #03208A;
+
+$kwc-green-01-background: #00a892;
+$kwc-green-02-background: #00ad96;
+$kwc-green-03-background: #00b19a;
+$kwc-green-04-background: #00b69f;
+$kwc-green-05-background: #00bba3;
+$kwc-green-06-background: #00bea6;
+$kwc-green-07-background: #00c2a9;
+$kwc-green-08-background: #00c5ac;
+$kwc-green-09-background: #00c7ae;
+$kwc-green-10-background: #00cab0;
+$kwc-green-11-background: #00ccb1;
+$kwc-green-12-background: #00cfb3;
+
+$kwc-bright-green-background: $kwc-green-01-background, $kwc-green-02-background, $kwc-green-03-background, $kwc-green-04-background, $kwc-green-05-background, $kwc-green-06-background, $kwc-green-07-background, $kwc-green-08-background, $kwc-green-09-background, $kwc-green-10-background, $kwc-green-11-background, $kwc-green-12-background;
+
+$kwc-bright-green-tabs-section-background: #DFF4F1;
+$kwc-bright-green-tab-text-color: #009380;

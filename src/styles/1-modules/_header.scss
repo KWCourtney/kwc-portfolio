@@ -1,0 +1,193 @@
+.kwc-header-wrapper {
+  height: 70px;
+  z-index: 11;
+
+  @extend .d-flex, .flex-row, .flex-nowrap, .px-3, .py-3, .align-items-center, .justify-content-between, .w-100;
+
+  .kwc-header {
+    width: 100%;
+
+    @extend .d-flex, .flex-row, .flex-nowrap, .mx-auto, .align-items-center;
+
+    div {
+      flex: 1;
+    }
+
+    .kwc-logo-wrap {
+      @extend .d-flex, .flex-row, .align-items-center, .justify-content-center;
+
+      a {
+        color: $kwc-off-white-01-color;
+        font-family: $kwc-brandon-grotesque-font;
+        font-weight: 900;
+        font-size: 1.4em;
+        letter-spacing: 2px;
+        transition : all 0.3s ease-out;
+        text-decoration: none;
+
+        @extend .text-uppercase;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    // Hamburger Menu
+    .button_container {
+      z-index: 100;
+      transition: opacity .25s ease;
+      cursor: pointer;
+      height: 35px;
+
+      @extend .d-flex, .flex-column, .align-items-center, .justify-content-center, .position-relative;
+
+      &.change {
+        .top {
+          transform: translate(-4px, -4px) rotateZ(-45deg);
+        }
+
+        .middle {
+          opacity: 0;
+        }
+
+        .bottom {
+          transform: translate(-4px, -3px) rotateZ(45deg);
+        }
+      }
+
+      &.active {
+        .top {
+          transform: translateY(5px) translateX(0) rotate(45deg);
+          background: $kwc-off-white-01-color;
+        }
+        .middle {
+          opacity: 0;
+          background: $kwc-off-white-01-color;
+        }
+
+        .bottom {
+          transform: translateY(-5px) translateX(0) rotate(-45deg);
+          background: $kwc-off-white-01-color;
+        }
+      }
+
+      span {
+        background: $kwc-off-white-01-color;
+        border: none;
+        height: 2px;
+        border-radius: 10px;
+        width: 18px;
+        top: 10px;
+        right: 10px;
+        transition:  all .35s ease;
+        cursor: pointer;
+
+        @extend .position-absolute;
+
+        &:nth-of-type(2) {
+          top: 15px;
+        }
+
+        &:nth-of-type(3) {
+          top: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Galaxy S5
+@media (min-width: 360px) {}
+
+// iPhone 6/7/8/x/11 pro
+@media (min-width: 375px) {
+  .kwc-header-wrapper {
+    .kwc-header {
+    width: 95% !important;
+    }
+  }
+}
+
+// iPhone 11 Pro
+@media only screen
+  and (device-width: 375px)
+  and (device-height: 812px)
+  and (-webkit-device-pixel-ratio: 3) {}
+
+// Pixel 2
+@media (min-width: 411px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .kwc-header-wrapper {
+    .kwc-header {
+      width: 95% !important;
+
+      .kwc-logo-wrap {
+        a {
+          font-size: 1.85em;
+        }
+      }
+
+      // Hamburger Menu
+      .button_container {
+        height: 50px;
+
+        &.active {
+          .top {
+            transform: translateY(9px) translateX(0) rotate(45deg);
+          }
+        }
+
+        span {
+          height: 3px;
+          width: 22px;
+          top: 15px;
+          transition: all .2s ease-in-out !important;
+
+            &:nth-of-type(2) {
+              top: 22px;
+            }
+
+            &:nth-of-type(3) {
+              top: 29px;
+            }
+          }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .kwc-header-wrapper {
+    .kwc-header {
+      width: 90% !important;
+    }
+  }
+ }
+
+// XX-Large devices (larger desktops, 1660px and up)
+@media (min-width: 1660px) {
+  .kwc-header-wrapper {
+    .kwc-header {
+      width: 85% !important;
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1920px and up)
+@media (min-width: 1920px) {
+  .kwc-header-wrapper {
+    .kwc-header {
+      width: 83% !important;
+    }
+  }
+}

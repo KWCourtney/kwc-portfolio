@@ -1,0 +1,58 @@
+<div class="kwc-portfolio-wrapper">
+    <div *ngFor="let project of projects | paginate: { itemsPerPage: 1, currentPage: page }" class="project {{project.style}}">
+      <!-- Projects Pagination, Project Name, Description, + Skills Chips-->
+      <div class="kwc-portfolio-content">
+        <!-- Pagination + Project Name -->
+        <div class="d-flex flex-column align-items-start justify-content-start w-100 flex-grow-1">
+          <div class="kwc-portfolio-pagination">
+            <ngb-pagination [collectionSize]="60" [(page)]="page" aria-label="Project Navigation" alt="Project Navigation" title="Project Navigation">
+              <ng-template ngbPaginationPrevious>
+                <i class="fas fa-angle-double-left"></i>
+              </ng-template>
+              <ng-template ngbPaginationNext>
+                <i class="fas fa-angle-double-right"></i>
+              </ng-template>
+            </ngb-pagination>
+          </div>
+
+          <!-- Project Name + Open Modal Icon -->
+          <section>
+            <div class="kwc-portfolio-project-name {{project.style}}" data-toggle="modal" attr.data-target="#modal-{{project.id}}" title="Open Project Detail Modal">
+              {{project.name}}
+            </div>
+
+            <div class="kwc-portfolio-open-modal" data-toggle="modal" attr.data-target="#modal-{{project.id}}" title="Open Project Detail Modal">
+              <app-nav-svg></app-nav-svg>
+            </div>
+          </section>
+        </div>
+
+        <!-- Project Description -->
+        <div class="project-one-paragraph">
+          {{project.body}}
+        </div>
+
+        <!-- Project Chips -->
+        <div class="kwc-portfolio-skills">
+          <div class="kwc-portfolio-skills-chips">
+            <div class="kwc-portfolio-skills-chip" *ngFor="let skills of project.skills">
+              <div class="kwc-portfolio-skills-chip-icon">
+                <i class="{{skills.icon}}"></i>
+              </div>
+              {{skills.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kwc-portfolio-background-image">
+        <img src="./assets/images/{{project.backgroundImage}}.svg" alt="{{project.backgroundImageAlt}}">
+      </div>
+
+      <!-- Background Circle-->
+      <div id="kwc-portfolio-background-circle"></div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <app-modal></app-modal>

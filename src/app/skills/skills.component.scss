@@ -1,0 +1,586 @@
+@import "styles";
+
+:host {
+  line-height: 1;
+  @extend .d-flex, .flex-column, .flex-nowrap, .align-items-center, .justify-content-center, .w-100, .h-100;
+  @include gradient(to right, $kwc-blue-background);
+}
+
+.kwc-skills-wrapper {
+  @extend  .d-flex, .flex-column, .w-100, .align-items-center, .justify-content-center;
+
+  .kwc-skills-content {
+    @extend  .d-flex, .flex-column, .justify-content-center, .align-items-center, .px-2, .flex-grow-1, .w-95;
+
+    .kwc-skills-item {
+      @extend  .d-flex, .flex-column, .flex-nowrap, .w-100;
+
+      .kwc-skills-title-01 {
+        font-weight: 700;
+        color: $kwc-off-white-01-color;
+        font-family: $kwc-gt-flexa-ext;
+        letter-spacing: -.0608em;
+        font-size: 2em;
+
+        @extend .text-uppercase;
+      }
+
+      .kwc-skills-divider {
+        @extend .mb-1;
+
+        img {
+          width: 33%;
+        }
+      }
+
+      .kwc-skills-subtitle {
+        color: $kwc-off-white-01-color;
+        line-height: 1.2;
+        font-size: .75em;
+
+        @extend .mb-3;
+      }
+
+      .kwc-skills-body {
+        .kwc-skills-chips {
+          @extend .d-flex, .flex-row, .flex-wrap, .align-items-center, .w-100, .justify-content-center;
+
+          .kwc-skills-chip {
+            border: 2px solid $kwc-off-white-01-color;
+            background:transparent;
+            padding: 0 8px 0 0px;
+            border-radius: 70px;
+            font-size: .75em;
+            line-height: 30px;
+            height: 30px;
+            font-weight: 500;
+            display: inline-table;
+            color: $kwc-off-white-01-color;
+
+            @extend .text-lowercase, .mb-1, .me-1;
+
+            &-icon {
+              height: 30px;
+              width: 22px;
+              display: block;
+              padding-left: 3px;
+              float: left;
+              border-radius: 50%;
+              text-align: center;
+              color: $kwc-off-white-01-color;
+              font-size: .9em;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+
+    .kwc-skills-navigation {
+      @extend .d-flex, .flex-row, .justify-content-end, .align-items-center, .mt-2, .w-95;
+    }
+  }
+}
+
+// Galaxy S5
+@media (min-width: 360px) {
+  .kwc-skills-wrapper {
+    .kwc-skills-content {
+      width: 95% !important;
+
+      .kwc-skills-item {
+        .kwc-skills-title-01 {
+          font-size: 2.3em;
+        }
+
+        .kwc-skills-subtitle {
+          font-size: .8rem;
+          line-height: 1.2;
+        }
+
+        .kwc-skills-body {
+          .kwc-skills-chips {
+            .kwc-skills-chip {
+              border-width: 2px;
+              padding: 0 10spx 0 0px;
+              margin-bottom: .5rem !important;
+              font-size: .8em;
+              letter-spacing: 0.02em;
+
+              &-icon {
+                margin: 0;
+                font-size: .8em;
+
+                .fas,
+                .fab {
+                  line-height: 3.2;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ }
+
+// iPhone 6/7/8/x/11 pro
+@media (min-width: 375px) {
+    .kwc-skills-wrapper {
+      .kwc-skills-content {
+        width: 90% !important;
+
+      .kwc-skills-item {
+        .kwc-skills-title-01 {
+          font-size: 2.4em;
+        }
+
+        .kwc-skills-subtitle {
+          font-size: .9em;
+          margin-bottom: 1rem !important;
+        }
+
+        .kwc-skills-body {
+          .kwc-skills-chips {
+            .kwc-skills-chip {
+              padding: 0 10px 0 0px;
+              margin-bottom: .5rem !important;
+              letter-spacing: 0.015em;
+              font-size: .8em;
+
+              &-icon {
+                width: 26px;
+                margin: 0;
+                font-size: .85em;
+
+                .fas,
+                .fab {
+                  line-height: 3.1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+///// iPhone 11 Pro
+@media only screen
+    and (device-width: 375px)
+    and (device-height: 812px)
+    and (-webkit-device-pixel-ratio: 3) {
+      .kwc-skills-wrapper {
+        .kwc-skills-content {
+          .kwc-skills-item {
+            .kwc-skills-subtitle {
+              font-size: 1em;
+              margin-bottom: 1.55rem !important;
+            }
+            .kwc-skills-body {
+              .kwc-skills-chips {
+                .kwc-skills-chip {
+                  padding: 0 10px 0 0px;
+                  font-size: .85em;
+                  letter-spacing: 0.025em;
+
+                  &-icon {
+                    font-size: .86em;
+
+                    .fas,
+                    .fab {
+                      line-height: 2.7;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .kwc-skills-navigation {
+            margin-top: .75rem !important;
+          }
+        }
+      }
+    }
+
+// Pixel 2
+@media (min-width: 411px) {
+  .kwc-skills-wrapper {
+    .kwc-skills-content {
+      .kwc-skills-item {
+        .kwc-skills-title-01 {
+          font-size: 2.6em;
+        }
+        .kwc-skills-subtitle {
+          font-size: 1em;
+          margin-bottom: 1.5rem !important;
+        }
+
+        .kwc-skills-body {
+          .kwc-skills-chips {
+            .kwc-skills-chip {
+              padding: 0 10px 0 0px;
+              font-size: .8em;
+              margin-bottom: .5rem !important;
+
+              &-icon {
+                .fas,
+                .fab {
+                  line-height: 2.6;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// iPhone 6/7/8/11/pro Max Plus
+@media (min-width: 414px) {
+
+  .kwc-skills-wrapper {
+    .kwc-skills-content {
+      .kwc-skills-item {
+        .kwc-skills-body {
+          .kwc-skills-chips {
+            .kwc-skills-chip {
+              padding: 0 11px 0 0px;
+              letter-spacing: .03em;
+
+              &-icon {
+                width: 28px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+  .kwc-skills-wrapper {
+    .kwc-skills-content {
+      width: 85% !important;
+
+      .kwc-skills-item {
+        .kwc-skills-title-01 {
+          font-size: 4.2em;
+          letter-spacing: -0.0408em;
+        }
+        .kwc-skills-subtitle {
+          font-size: 1.075em;
+          margin-bottom: 1.75rem !important;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          width: 96%;
+        }
+        .kwc-skills-divider {
+          margin-bottom: 1.5rem !important;
+
+            img {
+              width: 25%;
+            }
+        }
+
+        .kwc-skills-body {
+          .kwc-skills-chips {
+            justify-content: flex-start !important;
+            padding: 0 .75rem;
+
+            .kwc-skills-chip {
+              padding: 0 11px 0 0px;
+              font-size: .8em;
+              line-height: 30px;
+              height: 30px;
+              margin-right: .5rem !important;
+              margin-bottom: .75rem !important;
+
+              &-icon {
+                height: 30px;
+                width: 28px;
+                line-height: 32px;
+                font-size: .9em;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .kwc-skills-wrapper {
+    .kwc-skills-content {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      width: 93% !important;
+
+        .kwc-skills-top {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .kwc-skills-item {
+            &.left {
+              flex-basis: 46%;
+            }
+
+            &.right {
+              flex-basis: 54%;
+            }
+
+            .kwc-skills-title-01 {
+              font-size: 4em;
+              margin-left: -4px;
+              margin-bottom: 0 !important;
+            }
+
+            .kwc-skills-subtitle {
+              font-size: 1em;
+              line-height: 1.1;
+              margin-bottom: 0 !important;
+              letter-spacing: .01em;
+            }
+
+            .kwc-skills-divider {
+              margin-bottom:.75rem !important;
+
+              img {
+                width: 33%;
+              }
+            }
+
+            .kwc-skills-body {
+              padding-left: 0rem;
+              display: flex;
+              flex-direction: row;
+
+              .kwc-skills-chips {
+              justify-content: center !important;
+
+                .kwc-skills-chip {
+                  padding: 0 10px 0 0px;
+                  font-size: .8em;
+                  line-height: 34px;
+                  height: 34px;
+                  letter-spacing: .02em;
+                  margin-right: .25rem !important;
+                  margin-bottom: .5rem !important;
+
+                  &-icon {
+                    height: 34px;
+                    width: 27px;
+                    font-weight: 500;
+                    font-size: .85em;
+
+                    .fas,
+                    .fab {
+                      line-height: 3.1;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .kwc-skills-wrapper {
+    .kwc-skills-content {
+      width: 85% !important;
+
+      .kwc-skills-top {
+        .kwc-skills-item {
+          .kwc-skills-title-01 {
+            font-size: 4.8em;
+            margin-left: -6px;
+          }
+
+          .kwc-skills-divider {
+            margin-bottom: 1rem !important;
+          }
+
+          .kwc-skills-subtitle {
+            width: 97%;
+            font-size: 1.1em;
+            line-height: 1.2;
+          }
+
+          .kwc-skills-body {
+            padding-left: 0;
+            padding-right: 0;
+
+            .kwc-skills-chips {
+              padding: 0 .5rem;
+
+              .kwc-skills-chip {
+                padding: 0 12px 0 0px;
+                font-size: .9em;
+                line-height: 33px;
+                margin-right: .5rem !important;
+
+                &-icon {
+                  font-size: .9em;
+                  width: 30px;
+
+                  .fas,
+                  .fab {
+                    line-height: 2.8;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .kwc-skills-wrapper {
+    .kwc-skills-content {
+      width: 85% !important;
+
+      .kwc-skills-top {
+        .kwc-skills-item {
+          &.left {
+            flex-basis: 44%;
+          }
+
+          &.right {
+            flex-basis: 56%;
+          }
+
+          .kwc-skills-title-01 {
+            font-size: 4.8em;
+            margin-left: -8px;
+          }
+
+          .kwc-skills-subtitle {
+            font-size: 1.1em;
+          }
+
+          .kwc-skills-body {
+            padding-left: 0;
+            padding-right: 0;
+
+            .kwc-skills-chips {
+              padding: 0;
+
+              .kwc-skills-chip {
+                margin-bottom: .75rem !important;
+                font-size: .9em;
+                line-height: 35px;
+                height: 36px;
+                padding: 0 14px 0 0px;
+                margin-right: .25rem !important;
+
+                &-icon {
+                  font-size: .9em;
+                  width: 32px;
+                  height: 36px;
+
+                  .fas,
+                  .fab {
+                    line-height: 3;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ }
+
+ // XX-Large devices (larger desktops, 1660px and up)
+@media (min-width: 1660px) {
+  .kwc-skills-wrapper {
+    .kwc-skills-content {
+      width: 80% !important;
+
+      .kwc-skills-top {
+        .kwc-skills-item {
+          .kwc-skills-title-01 {
+            font-size: 5.6em;
+            margin-left: -5px;
+          }
+
+          .kwc-skills-subtitle {
+            font-size: 1.15em;
+            line-height: 1.3;
+          }
+
+          .kwc-skills-body {
+            padding-left: .75rem;
+
+            .kwc-skills-chips {
+              .kwc-skills-chip {
+                padding: 0 14px 0 0px;
+                font-size: .95em;
+                letter-spacing: .04em;
+                margin-right: .35rem !important;
+                margin-bottom: .85rem !important;
+
+                &-icon {
+                  height: 36px;
+                  width: 34px;
+                  font-size: .9em;
+
+
+                  .fas,
+                  .fab {
+                    line-height: 2.8;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ }
+
+// X-Large devices (large desktops, 1920px and up)
+@media (min-width: 1920px) {
+  .kwc-skills-wrapper {
+    .kwc-skills-content {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+      width: 75% !important;
+
+      .kwc-skills-top {
+        .kwc-skills-item {
+          .kwc-skills-title-01 {
+            font-size: 6em;
+          }
+
+          .kwc-skills-body {
+            padding-left: 3rem;
+            padding-right: 0rem;
+          }
+        }
+      }
+    }
+  }
+}

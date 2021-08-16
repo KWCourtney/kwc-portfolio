@@ -1,0 +1,357 @@
+@import "styles";
+
+:host {
+  line-height: 1;
+  @extend .d-flex, .flex-column, .flex-nowrap, .align-items-center, .justify-content-center, .w-100, .h-100;
+  @include gradient(to right, $kwc-blue-background);
+}
+
+/*   Fade In Animation */
+@keyframes fadeEffect{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: translateY(0px); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+	25% { opacity: 1; -moz-transform: translateY(0px); }
+	30% { opacity: 0; -moz-transform: translateY(0px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+@-webkit-keyframes fadeEffect{
+	0% { opacity: 0; }
+	5% { opacity: 0; -webkit-transform: translateY(0px); }
+	10% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 1; -webkit-transform: translateY(0px); }
+	30% { opacity: 0; -webkit-transform: translateY(0px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+@-ms-keyframes fadeEffect{
+	0% { opacity: 0; }
+	5% { opacity: 0; -ms-transform: translateY(0px); }
+	10% { opacity: 1; -ms-transform: translateY(0px); }
+	25% { opacity: 1; -ms-transform: translateY(0px); }
+	30% { opacity: 0; -ms-transform: translateY(0px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+.kwc-home-wrapper {
+  @extend  .d-flex, .flex-column, .w-100, .justify-content-center, .align-items-center;
+
+  .kwc-home-content {
+    @extend  .d-flex, .flex-column, .justify-content-center, .align-items-center, .px-2, .text-uppercase, .w-95;
+
+    .kwc-home-item {
+      flex: 0;
+      @extend .d-flex, .flex-row, .flex-nowrap, .w-100;
+
+      .kwc-home-name {
+        &-01,
+        &-02 {
+          font-weight: 700;
+          color: $kwc-off-white-01-color;
+          font-family: $kwc-gt-flexa-ext;
+          letter-spacing: -.0608em;
+          font-size: 2.85em;
+
+          @extend .d-flex, .flex-nowrap, .flex-row;
+        }
+
+        &-01 {
+          font-size: 2.6em;
+        }
+      }
+
+      .kwc-home-tagline {
+        @extend .d-flex, .flex-row, .flex-nowrap, .align-items-center, .flex-grow-1, .h-100, .justify-content-start;
+
+        .kwc-home-tagline-roles {
+          color: $kwc-off-white-01-color;
+          font-size: .75em;
+          flex: 1;
+
+          @extend .d-flex, .flex-row, .flex-nowrap, .align-items-center, .justify-content-center;
+
+          .fadeIn {
+            height: 100%;
+            width: 100%;
+
+            &-inner {
+              height: 100%;
+              letter-spacing: .1em;
+
+              @extend .d-flex, .flex-row, .flex-nowrap, .text-uppercase, .align-items-center, .justify-content-start, .ms-2;
+
+              span {
+                animation: fadeEffect 12s linear infinite 0s;
+                -ms-animation: fadeEffect 12s linear infinite 0s;
+                -webkit-animation: fadeEffect 12s linear infinite 0s;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                padding: .7rem 1.5rem;
+                color: $kwc-off-white-01-color;
+                font-weight: 800;
+
+                &:nth-child(2){
+                  animation-delay: 4s;
+                  -ms-animation-delay: 4s;
+                  -webkit-animation-delay: 4s;
+                }
+
+                &:nth-child(3){
+                  animation-delay: 8s;
+                  -ms-animation-delay: 8s;
+                  -webkit-animation-delay: 8s;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .kwc-home-navigation {
+      @extend .d-flex, .flex-row, .justify-content-end, .align-items-center, .mt-2, .w-95;
+    }
+  }
+}
+
+// Galaxy S5
+@media (min-width: 360px) {
+  .kwc-home-wrapper {
+    .kwc-home-content {
+      .kwc-home-item {
+        .kwc-home-name {
+          &-01 {
+            font-size: 2.9em;
+          }
+
+          &-02 {
+            font-size: 3.15em;
+          }
+        }
+
+        .kwc-home-tagline {
+          .kwc-home-tagline-roles {
+            font-size: .82em;
+          }
+        }
+      }
+    }
+  }
+ }
+
+// iPhone 6/7/8/x/11 pro
+@media (min-width: 375px) {
+  .kwc-home-wrapper {
+    .kwc-home-content {
+      width: 90% !important;
+
+      .kwc-home-item {
+        &-01 {
+          font-size: 2.4em;
+        }
+
+        .kwc-home-tagline {
+          .kwc-home-tagline-roles {
+            font-size: .85em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// iPhone 11 Pro
+@media only screen
+    and (device-width: 375px)
+    and (device-height: 812px)
+    and (-webkit-device-pixel-ratio: 3) { }
+
+// Pixel 2
+@media (min-width: 411px) {
+  .kwc-home-wrapper {
+    .kwc-home-content {
+      .kwc-home-item {
+        .kwc-home-name {
+          &-01,
+          &-02 {
+            font-size: 3.45em;
+          }
+        }
+
+        .kwc-home-tagline {
+          .kwc-home-tagline-roles {
+            font-size: .9em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// iPhone 6/7/8/11/pro Max Plus
+@media (min-width: 414px) {}
+
+ // iPad // Portrait and Landscape
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .kwc-home-wrapper {
+    .kwc-home-content {
+      width: 85% !important;
+
+      .kwc-home-item {
+        .kwc-home-name {
+          &-01,
+          &-02 {
+            line-height: .85;
+            font-size: 6.2em;
+          }
+        }
+
+        .kwc-home-tagline {
+          .kwc-home-tagline-roles {
+            height: 100%;
+            font-size: 1.4em;
+            letter-spacing: .04em;
+            justify-content: center !important;
+            align-items: center !important;
+            padding-left: 1rem;
+
+            span {
+              &:first-child {
+                margin-right: .25rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .kwc-home-wrapper {
+    .kwc-home-content {
+      width: 90% !important;
+
+      .kwc-home-item {
+        .kwc-home-name {
+          &-01,
+          &-02 {
+            font-size: 8.9em;
+          }
+        }
+
+        .kwc-home-tagline {
+          .kwc-home-tagline-roles {
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            font-size: 1.8em;
+
+            .fadeIn {
+              &-inner {
+               justify-content: center !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .kwc-home-wrapper {
+    .kwc-home-content {
+      width: 85% !important;
+      .kwc-home-item {
+        .kwc-home-name {
+          &-01,
+          &-02 {
+            font-size: 10.5em;
+          }
+        }
+
+        .kwc-home-tagline {
+          .kwc-home-tagline-roles {
+            font-size: 2em;
+            letter-spacing: .03em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .kwc-home-wrapper {
+    .kwc-home-content {
+      width: 80% !important;
+
+      .kwc-home-item {
+        .kwc-home-name {
+          &-01,
+          &-02 {
+            font-size: 11em;
+          }
+        }
+      }
+    }
+  }
+}
+
+// X-Large devices (large desktops, 1660px and up)
+@media (min-width: 1660px) {
+  .kwc-home-wrapper {
+    .kwc-home-content {
+      width: 72% !important;
+
+      .kwc-home-item {
+        .kwc-home-name {
+          &-01,
+          &-02 {
+            font-size: 11.5em;
+          }
+        }
+      }
+    }
+  }
+ }
+
+// X-Large devices (large desktops, 1920px and up)
+@media (min-width: 1920px) {
+  .kwc-home-wrapper {
+    .kwc-home-content {
+      width: 65% !important;
+
+      .kwc-home-item {
+        .kwc-home-name {
+          &-01,
+          &-02 {
+            font-size: 12.2em;
+          }
+        }
+
+        .kwc-home-tagline {
+          .kwc-home-tagline-roles {
+            font-size: 2.2em;
+            padding-left: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

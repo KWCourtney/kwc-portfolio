@@ -1,0 +1,15 @@
+@import "styles";
+
+:host {
+  overflow-x: hidden;
+
+  @extend .d-flex, .flex-column, .flex-nowrap, .h-100;
+}
+
+.kwc-body-wrapper {
+  @extend .d-flex, .flex-column, .flex-nowrap, .h-100;
+
+  .kwc-content-wrapper {
+    @extend .d-flex, .flex-column, .flex-nowrap, .h-100;
+  }
+}

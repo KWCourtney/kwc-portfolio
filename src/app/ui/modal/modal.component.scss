@@ -1,0 +1,1144 @@
+@import "styles";
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+
+.modal-dialog {
+  @extend .m-0;
+  overflow-y: initial !important;
+
+  .modal-header  {
+    border: none;
+    top: 10px;
+    position: absolute;
+    right: 13px;
+    z-index: 30;
+    padding: 0;
+
+    button {
+      &.close  {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: .25;
+        background: transparent;
+        text-shadow: none;
+        opacity: 1;
+        border-radius: 40em;
+        width: 35px;
+        height: 35px;
+        border: none;
+        color: $kwc-white !important;
+        background: $kwc-modal-button-background;
+      }
+    }
+  }
+
+  .modal-body {
+    overflow-y: auto;
+
+    &.kwc-modal-content {
+      overflow-x: hidden;
+
+      @extend .d-flex, .flex-column, .flex-nowrap, .p-0, .w-100;
+
+      .kwc-modal-details {
+        @extend .d-flex, .flex-column, .flex-nowrap, .w-100;
+
+        .kwc-modal-info-outer {
+          height: 50vh;
+
+          @extend .d-flex, .flex-column, .flex-nowrap,  .w-100;
+
+          &.apothecom,
+          &.views,
+          &.digitas {
+            @include gradient(to right, $kwc-blue-background);
+
+            img {
+              display: none;
+            }
+          }
+
+          &.oasys,
+          &.thof,
+          &.the-un
+            {
+              @include gradient(to right, $kwc-bright-green-background);
+            img {
+              display: none;
+            }
+          }
+
+          &.cradle,
+          &.talent,
+          &.hr,
+          &.jark
+            {
+              @include gradient(to right, $kwc-medium-blue-background);
+            img {
+              display: none;
+            }
+          }
+
+          section {
+            &.kwc-modal-details-background {
+              display: none;
+            }
+          }
+
+          .kwc-modal-info-inner {
+            word-spacing: .2em;
+
+            @extend .d-flex, .flex-column, .m-auto, .flex-nowrap, .text-lowercase,  .lh-1, .w-90, .px-2;
+
+            .kwc-modal-header-project-name {
+              font-weight: 700;
+              color: $kwc-off-white-01-color;
+              font-family: $kwc-gt-flexa-ext;
+              line-height: .9em;
+              letter-spacing: -0.0408em;
+              font-size: 3em;
+              margin-left: -0.25rem;
+
+              @extend .text-uppercase, .mb-0;
+            }
+
+            .kwc-modal-header-company {
+              font-size: 1.2em;
+              font-family: $kwc-peak-rounded-medium;
+              margin-left: .25rem;
+
+              @extend .mb-1;
+            }
+
+            .kwc-modal-header-project-type {
+              font-size: 1em;
+              font-family: $kwc-peak-rounded-medium;
+              margin-left: .25rem;
+
+              @extend .mb-3;
+            }
+
+            .kwc-modal-header-skills {
+              font-size: 1.5em;
+              letter-spacing: .02em;
+              font-family: $kwc-peak-rounded-medium;
+              margin-left: .25rem;
+
+              @extend .d-flex, .flex-column, .justify-content-start, .align-items-start;
+
+              section {
+                @extend .d-flex, .flex-row, .justify-content-start, .align-items-start, .w-100;
+
+                &:not(:last-child) {
+                  @extend .mb-2;
+                }
+
+                .kwc-modal-header-skills-chip-icon {
+                  font-size: .6em;
+                  width: 22px;
+                  text-align: center;
+
+                  @extend .me-1;
+
+                  .fas,
+                  .fab,
+                  .far {
+                    line-height: 1.1;
+                  }
+                }
+
+                .kwc-modal-header-skills-name {
+                  font-size: .65em;
+                }
+              }
+            }
+          }
+        }
+
+        .kwc-modal-details-tabs {
+          @extend .d-flex, .flex-column, .flex-nowrap, .align-items-center, .p-0, .w-100;
+
+            .kwc-modal-tabs-section {
+              @extend .d-flex, .flex-column, .flex-nowrap, .flex-grow-1, .w-100;
+
+              .kwc-modal-tab-item {
+                flex: 1 50%;
+                border: 1px solid $kwc-grey-02-color;
+
+                @extend .d-flex, .flex-column, .justify-content-center, .align-items-start, .py-5;
+
+                section {
+                  border-radius: 20px;
+                  @extend .d-flex, .flex-column, .justify-content-center, .align-items-start, .w-85, .m-auto, .p-4;
+
+                  &.apothecom,
+                  &.views,
+                  &.digitas {
+                    background: $kwc-blue-tabs-section-background;
+                    color: $kwc-blue-tab-text-color;
+                  }
+
+                  &.oasys,
+                  &.thof,
+                  &.the-un {
+                    background: $kwc-bright-green-tabs-section-background;
+                    color: $kwc-bright-green-tab-text-color;
+                  }
+
+                  &.cradle,
+                  &.talent,
+                  &.hr,
+                  &.jark
+                    {
+                    background: $kwc-medium-blue-tabs-section-background;
+                    color: $kwc-blue-tab-text-color;
+                  }
+
+                  .kwc-modal-tab-item-header {
+                    font-weight: 700;
+                    font-family: $kwc-gt-flexa-ext;
+                    font-size: 1.7em;
+                    letter-spacing: -.04em;
+
+                    @extend .text-uppercase;
+
+                    span {
+                      @extend  .d-flex, .flex-row, .flex-nowrap, .flex-grow-1, .w-100;
+                    }
+                  }
+
+                  .kwc-modal-tab-item-sub-head {
+                    font-family: $kwc-peak-rounded-medium;
+                    font-size: 1.1em;
+                    line-height: 1.1;
+                    font-weight: 600;
+
+                    @extend .my-2;
+                  }
+
+                  .kwc-modal-tab-item-text {
+                    font-family: $kwc-peak-rounded;
+                    font-size: 1.1em;
+                    line-height: 1.2em;
+
+                    @extend .mt-2;
+                  }
+                }
+
+                &.image{
+                  @extend .d-flex, .flex-column, .align-items-center, .justify-content-center, .px-1;
+
+                  img {
+                  width: 90%;
+                  }
+                }
+              }
+            }
+        }
+      }
+    }
+  }
+}
+
+// Galaxy S5
+@media (min-width: 360px) {
+  .modal-dialog {
+    .modal-body {
+      &.kwc-modal-content {
+        .kwc-modal-details {
+          .kwc-modal-details-tabs {
+            .kwc-modal-tabs-section {
+              .kwc-modal-tab-item {
+                section {
+                  .kwc-modal-tab-item-header {
+                    font-size: 1.8em;
+                    letter-spacing: -.04em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// iPhone 6/7/8/x/11 pro
+@media (min-width: 375px) {
+  .modal-dialog {
+    .modal-body {
+      &.kwc-modal-content {
+        .kwc-modal-details {
+          .kwc-modal-info-outer {
+            height: 48vh;
+            .kwc-modal-info-inner {
+              .kwc-modal-header-project-name {
+                font-size: 3.2em;
+              }
+              .kwc-modal-header-skills {
+                margin-top: .5rem;
+              }
+            }
+          }
+
+          .kwc-modal-details-tabs {
+            .kwc-modal-tabs-section {
+              .kwc-modal-tab-item {
+                section {
+                  .kwc-modal-tab-item-sub-head {
+                    font-size: 1.2em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// iPhone 11 Pro
+@media only screen
+  and (device-width: 375px)
+  and (device-height: 812px)
+  and (-webkit-device-pixel-ratio: 3) {
+    .modal-dialog {
+      .modal-body  {
+        &.kwc-modal-content {
+          .kwc-modal-details {
+            .kwc-modal-info-outer {
+              .kwc-modal-info-inner {
+                .kwc-modal-header-project-name {
+                  font-size: 3.1em;
+                  letter-spacing: -.0408em;
+                  line-height: .9em;
+                }
+
+                .kwc-modal-header-company {
+                  font-size: 1.45em;
+                }
+
+                .kwc-modal-header-project-type {
+                  font-size: 1.1em;
+                }
+
+                .kwc-modal-header-skills {
+                  section {
+                    .kwc-modal-header-skills-chip-icon {
+                      font-size: .65em;
+                      margin-right: .75rem !important;
+                    }
+
+                    .kwc-modal-header-skills-name {
+                      font-size: .7em;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+// Pixel 2
+@media (min-width: 411px) {}
+
+// iPad // Portrait and Landscape
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .modal-dialog {
+    .modal-header  {
+      top: 25px;
+      right: 30px;
+
+      button {
+        &.close {
+        width: 55px;
+        height: 55px;
+        transition: all .2s ease-in-out !important;
+
+          &:hover {
+            transform: scale(1.1) !important ;
+          }
+        }
+      }
+    }
+
+    // Modal Content
+    .modal-body{
+      &.kwc-modal-content {
+        .kwc-modal-details {
+          .kwc-modal-info-outer {
+            &.apothecom,
+            &.oasys,
+            &.cradle,
+            &.views,
+            &.talent,
+            &.hr,
+            &.the-un,
+            &.thof,
+            &.jark,
+            &.digitas
+            {
+              img {
+                  display: flex;
+                  position: absolute;
+                  width: 50%;
+                  right: 20px;
+                  top: 30px;
+                  z-index: 2;
+                }
+              }
+
+            &.oasys,
+            &.cradle,
+            &.views {
+              img {
+                top: 50px;
+              }
+            }
+
+            &.talent,
+            &.jark,
+            &.thof,
+            &.digitas {
+              img {
+                width: 52%;
+                top: 55px;
+              }
+            }
+
+            &.hr {
+              img {
+                width: 47%;
+                top: 25px;
+              }
+            }
+
+            &.the-un {
+              img {
+                top: 25px;
+              }
+            }
+
+            #kwc-modal-background-circle {
+              height: 21em;
+              width: 21em;
+              position: absolute;
+              background: $kwc-background-circle;
+              right: 6%;
+              top: 6%;
+              border-radius: 30em;
+            }
+
+            .kwc-modal-info-inner {
+              .kwc-modal-header-project-name {
+                font-size: 3.6em;
+              }
+
+              .kwc-modal-header-company {
+                font-size: 1.4em;
+              }
+
+              .kwc-modal-header-project-type {
+                font-size: 1.2em;
+              }
+            }
+          }
+
+          .kwc-modal-details-tabs {
+            .kwc-modal-tabs-section {
+              flex-direction: row !important;
+              height: 500px;
+
+              &:nth-child(even) {
+                flex-direction: row !important;
+                flex-flow: row-reverse !important;
+              }
+              .kwc-modal-tab-item {
+                section {
+                  width: 85% !important;
+
+                  .kwc-modal-tab-item-header {
+                    font-size: 1.65em;
+                  }
+
+                  .kwc-modal-tab-item-sub-head {
+                    font-family: $kwc-peak-rounded-medium;
+                    font-size: 1.05em;
+                    line-height: 1;
+                  }
+
+                  .kwc-modal-tab-item-text {
+                    font-size: 1em;
+                    line-height: 1.1;
+                    letter-spacing: -.01em;
+                  }
+                }
+
+                &.image{
+                  img {
+                  width: 90%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .modal-dialog {
+    .modal-header  {
+      button {
+        &.close  {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .modal-body{
+      &.kwc-modal-content {
+        .kwc-modal-details {
+          .kwc-modal-info-outer {
+            height: 70vh;
+
+            &.apothecom,
+            &.oasys,
+            &.cradle,
+            &.views,
+            &.hr,
+            &.the-un,
+            &.talent,
+            &.digitas {
+              img {
+                width: 46%;
+                right: 50px;
+                top: 30px;
+              }
+            }
+
+            &.oasys,
+            &.cradle {
+              img {
+                top: 40px;
+              }
+            }
+
+            &.views {
+              img {
+                top: 50px;
+              }
+            }
+
+            &.talent,
+            &.jark,
+            &.thof {
+              img {
+                width: 49%;
+                top: 45px;
+              }
+            }
+
+            &.digitas {
+              img {
+                width: 47%;
+                top: 65px;
+              }
+            }
+
+            &.hr {
+              img {
+                right: 60px;
+                width: 42%;
+                top: 25px;
+              }
+            }
+
+            #kwc-modal-background-circle {
+              height: 25em;
+              width: 25em;
+              right: 7%;
+              top: 9%;
+            }
+
+            .kwc-modal-info-inner {
+              width: 80% !important;
+
+              .kwc-modal-header-project-name {
+                font-size: 4.6em;
+                letter-spacing: -0.0408em;
+              }
+
+              .kwc-modal-header-company {
+                font-size: 1.6em;
+              }
+
+              .kwc-modal-header-project-type {
+                font-size: 1.3em;
+              }
+
+              .kwc-modal-header-skills {
+                section {
+                  .kwc-modal-header-skills-chip-icon {
+                    width: 26px;
+                  }
+
+                  .kwc-modal-header-skills-name {
+                    font-size: .7em;
+                  }
+                }
+              }
+            }
+          }
+
+          .kwc-modal-details-tabs {
+            .kwc-modal-tabs-section {
+              .kwc-modal-tab-item {
+                section {
+                  width: 75% !important;
+                  padding: 1.25rem !important;
+
+                  .kwc-modal-tab-item-header {
+                    font-size: 1.8em;
+                  }
+
+                  .kwc-modal-tab-item-sub-head {
+                    font-size: 1.1em;
+                    line-height: 1.1;
+                  }
+
+                  .kwc-modal-tab-item-text {
+                    font-size: 1.1em;
+                    line-height: 1.1;
+                  }
+                }
+
+                &.image{
+                  img {
+                  width: 80%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .modal-dialog {
+    .modal-body {
+      &.kwc-modal-content {
+        .kwc-modal-details {
+          .kwc-modal-info-outer {
+            &.apothecom,
+            &.oasys,
+            &.cradle,
+            &.views,
+            &.talent,
+            &.hr,
+            &.the-un,
+            &.thof,
+            &.jark,
+            &.digitas {
+              img {
+                  width: 41%;
+                  right: 90px;
+                  top: 30px;
+              }
+            }
+
+            &.apothecom {
+              img {
+                width: 40%;
+              }
+            }
+
+            &.oasys,
+            &.cradle {
+            img {
+                top: 40px;
+                right: 90px;
+              }
+            }
+
+            &.views {
+              img {
+                  top: 50px;
+                  right: 90px;
+                }
+              }
+
+            &.talent {
+              img {
+                width: 43%;
+                top: 50px;
+              }
+            }
+
+            #kwc-modal-background-circle {
+              height: 27em;
+              width: 27em;
+              right: 10%;
+              top: 9%;
+            }
+
+            .kwc-modal-info-inner {
+              .kwc-modal-header-project-name {
+                font-size: 5em;
+              }
+
+              .kwc-modal-header-company {
+                font-size: 1.8em;
+              }
+
+              .kwc-modal-header-project-type {
+                font-size: 1.4em;
+              }
+
+              .kwc-modal-header-skills {
+                section {
+                  .kwc-modal-header-skills-chip-icon {
+                    font-size: .65em;
+                    line-height: 1.25;
+                    width: 30px;
+                  }
+
+                  .kwc-modal-header-skills-name {
+                    font-size: .75em;
+                  }
+                }
+              }
+            }
+          }
+
+          .kwc-modal-details-tabs {
+            .kwc-modal-tabs-section {
+              .kwc-modal-tab-item {
+                section {
+                  width: 65% !important;
+                  padding: 1.75rem !important;
+
+                  .kwc-modal-tab-item-sub-head {
+                    font-size: 1.15em;
+                  }
+
+                  .kwc-modal-tab-item-text {
+                    line-height: 1.15;
+                  }
+                }
+
+                &.image{
+                  img {
+                    width: 70%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .modal-dialog {
+    .modal-body{
+      &.kwc-modal-content {
+        .kwc-modal-details {
+          .kwc-modal-info-outer {
+            height: 80vh;
+
+            &.apothecom,
+            &.oasys,
+            &.cradle,
+            &.views,
+            &.talent,
+            &.hr,
+            &.the-un,
+            &.thof,
+            &.jark,
+            &.digitas
+              {
+              img {
+                width: 37%;
+                right: 140px;
+                top: 50px;
+              }
+            }
+
+            &.cradle,
+            &.views
+            {
+              img {
+                right: 130px;
+                top: 65px;
+              }
+            }
+
+            &.jark
+            {
+              img {
+                width: 40%;
+                top: 60px;
+              }
+            }
+
+            &.talent,
+            &.thof {
+              img {
+                width: 40%;
+                top: 60px;
+              }
+            }
+
+            &.hr {
+              img {
+                width: 34%;
+                right: 170px;
+                top: 30px;
+              }
+            }
+
+            &.digitas {
+              img {
+                width: 39%;
+                top: 70px;
+              }
+            }
+
+            #kwc-modal-background-circle {
+              height: 29em;
+              width: 29em;
+              right: 11%;
+              top: 10%;
+            }
+
+            .kwc-modal-info-inner {
+              width: 75% !important;
+
+              .kwc-modal-header-project-name {
+                font-size: 5em;
+                margin-left: -0.4rem;
+              }
+
+              .kwc-modal-header-company {
+                font-size: 1.8em;
+              }
+
+              .kwc-modal-header-project-type {
+                font-size: 1.4em;
+              }
+
+              .kwc-modal-header-skills {
+                section {
+                  .kwc-modal-header-skills-chip-icon {
+                    font-size: 0.75em;
+                    line-height: 1.25;
+                  }
+
+                  .kwc-modal-header-skills-name {
+                    font-size: .8em;
+                  }
+                }
+              }
+            }
+          }
+
+          .kwc-modal-details-tabs {
+            .kwc-modal-tabs-section {
+              height: 550px;
+
+              .kwc-modal-tab-item {
+                section {
+                  padding: 2rem !important;
+                  width: 57% !important;
+
+                  .kwc-modal-tab-item-text {
+                    font-size: 1.15em;
+                    line-height: 1.15;
+                  }
+                }
+
+                &.image{
+                  img {
+                    width: 63%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1660px and up)
+@media (min-width: 1660px) {
+  .modal-dialog {
+    .modal-body{
+      &.kwc-modal-content {
+        .kwc-modal-details {
+          .kwc-modal-info-outer {
+            &.apothecom,
+            &.oasys,
+            &.cradle,
+            &.views,
+            &.talent,
+            &.hr,
+            &.the-un,
+            &.thof,
+            &.jark,
+            &.digitas {
+              img {
+                width: 36%;
+                right: 170px;
+                top: 65px;
+              }
+            }
+
+            &.oasys {
+              img {
+                width: 37%;
+                right: 160px;
+                top: 75px;
+              }
+            }
+
+            &.cradle {
+              img {
+                width: 38%;
+                right: 140px;
+                top: 75px;
+              }
+            }
+
+            &.views {
+              img {
+                width: 38%;
+                right: 140px;
+                top: 85px;
+              }
+            }
+
+            &.the-un {
+              img {
+                width: 38%;
+                right: 150px;
+                top: 45px;
+              }
+            }
+
+            &.jark,
+            &.digitas {
+              img {
+                width: 36%;
+                top: 115px;
+              }
+            }
+
+            &.talent {
+              img {
+                width: 37%;
+                right: 180px;
+                top: 100px;
+
+              }
+            }
+
+            &.thof {
+              img {
+                width: 38%;
+                right: 150px;
+                top: 85px;
+              }
+            }
+
+            &.hr {
+              img {
+                width: 33%;
+                top: 55px;
+              }
+            }
+
+            #kwc-modal-background-circle {
+              height: 34em;
+              width: 34em;
+              right: 11%;
+              top: 11%;
+            }
+
+            .kwc-modal-info-inner {
+              .kwc-modal-header-project-type {
+                margin-bottom: 1.5rem !important;
+              }
+
+              .kwc-modal-header-skills {
+                section {
+                  .kwc-modal-header-skills-chip-icon {
+                    margin-right: .5rem !important;
+                  }
+                }
+              }
+            }
+          }
+
+          .kwc-modal-details-tabs {
+            .kwc-modal-tabs-section {
+              height: 550px;
+
+              .kwc-modal-tab-item {
+                section {
+                  width: 50% !important;
+                  padding: 2rem !important;
+                }
+
+                &.image{
+                  img {
+                    width: 55%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ }
+
+// XX-Large devices (larger desktops, 1920px and up)
+@media (min-width: 1920px) {
+  .modal-dialog {
+    .modal-body{
+      &.kwc-modal-content {
+        .kwc-modal-details {
+          .kwc-modal-info-outer {
+            height: 85vh;
+
+            &.apothecom,
+            &.oasys,
+            &.cradle,
+            &.views,
+            &.talent,
+            &.hr,
+            &.the-un,
+            &.thof,
+            &.jark,
+            &.digitas {
+              img {
+                width: 33%;
+                right: 220px;
+                top: 70px;
+              }
+            }
+
+            &.oasys,
+            &.cradle,
+            &.views {
+              img {
+                width: 35%;
+                right: 180px;
+                top: 75px;
+              }
+            }
+
+            &.hr {
+              img {
+                width: 30%;
+                top: 55px;
+              }
+            }
+
+            &.talent,
+            &.thof,
+            &.jark,
+            &.digitas {
+              img {
+                width: 35%;
+                top: 85px;
+                right: 210px;
+              }
+            }
+
+            #kwc-modal-background-circle {
+              right: 13%;
+            }
+
+            .kwc-modal-info-inner {
+              .kwc-modal-header-project-name {
+                font-size: 6em;
+              }
+
+              .kwc-modal-header-company {
+                font-size: 2em;
+              }
+
+              .kwc-modal-header-project-type {
+                font-size: 1.55em;
+              }
+            }
+          }
+
+          .kwc-modal-details-tabs {
+            .kwc-modal-tabs-section {
+              height: 600px;
+
+              .kwc-modal-tab-item {
+                section {
+                  width: 52% !important;
+                  padding: 2.5rem !important;
+
+                  .kwc-modal-tab-item-header {
+                    font-size: 2.3em;
+                  }
+
+                  .kwc-modal-tab-item-sub-head {
+                    font-size: 1.35em;
+                    line-height: 1.2;
+                  }
+
+                  .kwc-modal-tab-item-text {
+                    font-size: 1.2em;
+                    line-height: 1.2;
+                  }
+                }
+
+                &.image{
+                  img {
+                    width: 60%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

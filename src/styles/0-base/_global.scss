@@ -1,0 +1,382 @@
+body {
+  height: 100vh;
+  color: $kwc-off-white-01-color !important;
+  @include gradient(to right, $kwc-blue-background);
+  background: $kwc-blue-background;
+  overflow-x: hidden;
+  font-family: $kwc-peak-rounded !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+	outline: none;
+}
+
+.page-link {
+  &:focus {
+    box-shadow:none !important;
+    border: none !important;
+    outline: none !important;
+  }
+}
+.page-item {
+  &.active {
+    .page-link {
+      border-color:transparent !important;
+      background-color:transparent !important;
+      outline: none !important;
+    }
+  }
+}
+
+a {
+  color: $kwc-off-white-01-color !important;
+}
+
+a:active, a:focus {
+  outline: 0 !important;
+  border: none !important;
+  -moz-outline-style: none !important;
+  outline-style: none !important;
+}
+
+.kwc-home-navigation,
+.kwc-about-navigation,
+.kwc-skills-navigation,
+.kwc-career-navigation {
+  .kwc-navigation-svg {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.kwc-portfolio-open-modal {
+  .kwc-navigation-svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.kwc-navigation-svg {
+  -webkit-transition: -webkit-transform .6s cubic-bezier(.65,-.7,0,1.65);
+  transition: -webkit-transform .6s cubic-bezier(.65,-.7,0,1.65);
+  transition: transform .6s cubic-bezier(.65,-.7,0,1.65);
+  transition: transform .6s cubic-bezier(.65,-.7,0,1.65), -webkit-transform .6s cubic-bezier(.65,-.7,0,1.65);
+
+  &:hover {
+    -webkit-transform: rotate(1turn) scale(1.05);
+    transform: rotate(1turn) scale(1.05);
+  }
+}
+
+.kwc-home-tagline-icon,
+.kwc-about-icon,
+.kwc-skills-icon,
+.kwc-career-icon,
+.kwc-contact-icon {
+  height: 100%;
+  margin-top: -.75rem;
+  margin-left: .25rem;
+
+  .kwc-tagline-svg {
+    height: 40px;
+    fill: $kwc-bright-blue-01-color;
+  }
+}
+
+.kwc-about-icon,
+.kwc-skills-icon,
+.kwc-career-icon,
+.kwc-contact-icon {
+  .kwc-tagline-svg {
+    height: 35px;
+  }
+}
+
+
+// Galaxy S5
+@media (min-width: 360px) {
+  .kwc-home-navigation,
+  .kwc-about-navigation,
+  .kwc-skills-navigation,
+  .kwc-career-navigation {
+    .kwc-navigation-svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .kwc-portfolio-open-modal {
+    .kwc-navigation-svg {
+      width: 42px;
+      height: 42px;
+      margin-top: -5px;
+    }
+  }
+}
+
+// iPhone 6/7/8/x/11 pro
+@media (min-width: 375px) {
+  .kwc-home-navigation,
+  .kwc-about-navigation,
+  .kwc-skills-navigation,
+  .kwc-career-navigation {
+    .kwc-navigation-svg {
+      width: 47px;
+      height: 47px;
+    }
+  }
+
+  .kwc-portfolio-open-modal {
+    .kwc-navigation-svg {
+      width: 43px;
+      height: 43px;
+    }
+  }
+
+  .kwc-home-tagline-icon {
+    margin-top: -1.5rem;
+
+    .kwc-tagline-svg {
+      height: 45px;
+    }
+  }
+
+  .kwc-about-icon,
+  .kwc-skills-icon,
+  .kwc-contact-icon {
+    .kwc-tagline-svg {
+      height: 35px;
+    }
+  }
+}
+
+// iPhone 11 Pro
+@media only screen
+    and (device-width: 375px)
+    and (device-height: 812px)
+    and (-webkit-device-pixel-ratio: 3) {  }
+
+// Pixel 2
+@media (min-width: 411px) {
+  .kwc-home-tagline-icon {
+    .kwc-tagline-svg {
+      height: 48px;
+    }
+  }
+
+  .kwc-about-icon,
+  .kwc-skills-icon,
+  .kwc-contact-icon {
+    margin-top: -1rem;
+
+    .kwc-tagline-svg {
+      height: 45px;
+    }
+  }
+}
+
+// iPhone 6/7/8/11/pro Max Plus
+@media (min-width: 414px) {}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+ // iPad // Portrait and Landscape
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 1) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .kwc-home-navigation,
+  .kwc-about-navigation,
+  .kwc-skills-navigation,
+  .kwc-career-navigation {
+    .kwc-navigation-svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .kwc-portfolio-open-modal {
+    .kwc-navigation-svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .kwc-home-tagline-icon {
+    margin-top: -2.5rem;
+    .kwc-tagline-svg {
+      height: 75px;
+    }
+  }
+
+  .kwc-about-icon,
+  .kwc-skills-icon,
+  .kwc-career-icon,
+  .kwc-contact-icon {
+    .kwc-tagline-svg {
+      height: 65px;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  a {
+    transition: all .2s ease-in-out !important;
+
+    &:hover {
+      transform: scale(1.1) !important ;
+    }
+  }
+
+// Hover Animation
+.button-container-inner {
+  height: 100%;
+  flex-basis: auto;
+  width: 44px;
+  margin-left: auto;
+  transition: all .2s ease-in-out !important;
+
+  &:hover {
+    transform: scale(1.1) !important ;
+  }
+}
+
+  .kwc-portfolio-open-modal {
+    .kwc-navigation-svg {
+      width: 55px;
+      margin-top: -10px;
+      height: 55px;
+    }
+  }
+
+  .kwc-home-tagline-icon {
+    .kwc-tagline-svg {
+      height: 80px;
+    }
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .kwc-home-navigation,
+  .kwc-about-navigation,
+  .kwc-skills-navigation,
+  .kwc-career-navigation {
+    .kwc-navigation-svg {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .kwc-portfolio-open-modal {
+    .kwc-navigation-svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .kwc-home-tagline-icon {
+    .kwc-tagline-svg {
+      height: 85px;
+    }
+  }
+
+  .kwc-about-icon,
+  .kwc-career-icon,
+  .kwc-skills-icon,
+  .kwc-contact-icon {
+    .kwc-tagline-svg {
+      height: 70px;
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .kwc-portfolio-open-modal {
+    .kwc-navigation-svg {
+      width: 60px;
+      height: 60px;
+      margin-top: -10px;
+    }
+  }
+
+  .kwc-home-tagline-icon {
+    .kwc-tagline-svg {
+      height: 100px;
+    }
+  }
+
+  .kwc-about-icon,
+  .kwc-career-icon,
+  .kwc-skills-icon,
+  .kwc-contact-icon {
+    .kwc-tagline-svg {
+      height: 75px;
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1660px and up)
+@media (min-width: 1660px) {
+  .kwc-portfolio-open-modal {
+    .kwc-navigation-svg {
+      width: 65px;
+      height: 65px;
+    }
+  }
+
+  .kwc-home-tagline-icon {
+    .kwc-tagline-svg {
+      height: 115px;
+    }
+  }
+
+  .kwc-about-icon,
+  .kwc-career-icon,
+  .kwc-skills-icon,
+  .kwc-contact-icon {
+    .kwc-tagline-svg {
+      height: 80px;
+    }
+  }
+}
+
+// XX-Large devices (larger desktops, 1920px and up)
+@media (min-width: 1920px) {
+  .kwc-home-navigation,
+  .kwc-about-navigation,
+  .kwc-skills-navigation,
+  .kwc-career-navigation {
+    .kwc-navigation-svg {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .kwc-home-tagline-icon {
+    margin-top: -3.5rem;
+    .kwc-tagline-svg {
+      height: 115px;
+    }
+  }
+
+  .kwc-about-icon,
+  .kwc-career-icon,
+  .kwc-skills-icon,
+  .kwc-contact-icon {
+    .kwc-tagline-svg {
+      height: 85px;
+    }
+  }
+}

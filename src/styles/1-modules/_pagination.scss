@@ -1,0 +1,48 @@
+// Pagination
+ul  {
+  &.pagination {
+    @extend .mb-0;
+
+    li {
+      &.page-item {
+
+        &.disabled {
+          opacity: .5;
+        }
+        .page-link {
+          background: transparent;
+          border: none;
+          color: $kwc-off-white-01-color;
+        }
+      }
+
+      &:nth-child(n+2) {
+        display: none;
+      }
+      &:nth-child(n+8) {
+        display: block;
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {}
+
+// XX-Large devices (larger desktops, 1660px and up)
+@media (min-width: 1660px) {}
+
+// XX-Large devices (larger desktops, 1920px and up)
+@media (min-width: 1920px) {}
